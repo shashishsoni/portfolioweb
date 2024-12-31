@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-page {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+}
