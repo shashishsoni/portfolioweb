@@ -1,53 +1,70 @@
-import React from 'react'
-import '../Styles/NavPage.css'
-import astronaut from '../assets/astronaut.png'
-import skill from '../assets/skill.png'
-import message from '../assets/letter.png'
-import stack from '../assets/layer.png'
-import { Link, useLocation } from 'react-router-dom'
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import astronautHelmet from "../assets/astronaut.png";
+import deadEye from "../assets/skill.png";
+import stack from "../assets/layer.png";
+import envelope from "../assets/letter.png";
+import "../Styles/NavPage.css";
 
-const NavPage = () => {
-  const location = useLocation()
+export default function Nav() {
+  const location = useLocation();
 
-  const getPositionclass = () => {
-    switch(location.pathname) {
-      case '/':
-        return 'about-page';
-      case '/skill':
-        return 'skill-page';
-      case '/stack':
-        return 'stack-page';
-      case '/message':
-        return 'message-page';
+  const getNavPositionClass = () => {
+    switch (location.pathname) {
+      case "/":
+        return "nav-about";
+      case "/skill":
+        return "nav-skills";
+      case "/stack":
+        return "nav-projects";
+      case "/message":
+        return "nav-contact";
       default:
-        return '';
+        return "";
     }
-  }
+  };
 
-  const getTitle = () => {
-    switch(location.pathname) {
-      case '/':
-        return 'About';
-      case '/skill':
-        return 'Skill';
-      case '/stack':
-        return 'Stack';
-      case '/message':
-        return 'Contact';
+  const getPageTitle = () => {
+    switch (location.pathname) {
+      case "/":
+        return "ABOUT";
+      case "/skill":
+        return "SKILLS";
+      case "/stack":
+        return "STACK";
+      case "/message":
+        return "CONTACT";
       default:
-        return '';
+        return "";
     }
-  }
+  };
 
-  const getnavpostionclass = () => {
+  const navPositionClass = getNavPositionClass();
+  const pageTitle = getPageTitle();
+
+  const isCurrentPage = (navClass) => {
+    return navClass === navPositionClass;
+  };
+
+  const renderNavLink = (to, imgSrc, altText, navClass) => {
+    const isCurrent = isCurrentPage(navClass);
+    const linkClass = isCurrent ? "nav-link current" : "nav-link";
+
+    return (
+      <Link to={to} className={linkClass}>
+        <img src={imgSrc} alt={altText} />
+        <span className="alt-text color-black">{altText}</span>
+        {isCurrent && <h1 className="page-title color-black">{pageTitle}</h1>}
+      </Link>
+    );
+  };
+
   return (
-    <div className='nav-page'>
-      <img src={astronaut} className='w-10 h-10' alt="astronaut" />
-      <img src={skill} className='w-10 h-10' alt="skill" />
-      <img src={stack} className='w-10 h-10' alt="stack" />
-      <img src={message} className='w-10 h-10' alt="message" />
-    </div>
-  )
+    <nav className={`nav ${navPositionClass}`}>
+      {renderNavLink("/", astronautHelmet, "About", "nav-about")}
+      {renderNavLink("/skill", deadEye, "Skills", "nav-skills")}
+      {renderNavLink("/stack", stack, "Stack", "nav-projects")}
+      {renderNavLink("/message", envelope, "Contact", "nav-contact")}
+    </nav>
+  );
 }
-
-export default NavPage
