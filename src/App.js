@@ -6,7 +6,7 @@ import SkillPage from './pages/SkillPage';
 import StackPage from './pages/StackPage';
 import MessagePage from './pages/MessagePage';
 import Background from './components/background';
-
+import PlayerState from './components/PlayerState';
 const App = () => {
   return (
     <Router>
@@ -18,6 +18,7 @@ const App = () => {
         <Route path='/stack' element={<StackPage />} />
         <Route path='/message' element={<MessagePage />} />
       </Routes>
+      <PlayerState />
     </Router>
   );
 }

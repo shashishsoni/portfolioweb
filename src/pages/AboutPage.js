@@ -1,10 +1,13 @@
 import React from 'react'
+import AboutMenu from '../components/aboutmenu.js'
+import Avatar from '../components/avatar.js'
 
 const AboutPage = () => {
   return (
-    <div>
-      <h1>About Page</h1>
-    </div>
+    <>
+      <Avatar page="about"/>
+      <AboutMenu />
+    </>
   )
 }
 
