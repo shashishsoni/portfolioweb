@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* Menu items on the left */
+.menu {
+  width: 19rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 55%;
+  transform: translateY(-50%);
+  left: 15rem;
+  z-index: 10;
+  gap: 1rem;
+}
+
+.item {
+  font-family: 'Share Tech Mono', monospace;
+  padding: 1.25rem 2rem;
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  background: rgba(0, 0, 0, 0.85);
+  color: #00ff00;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 255, 0, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    #00ff00,
+    transparent
+  );
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.item:hover::before {
+  opacity: 1;
+}
+
+.item.active {
+  background: rgba(0, 255, 0, 0.15);
+  border-color: rgba(0, 255, 0, 0.5);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 0, 0.3),
+    inset 0 0 15px rgba(0, 255, 0, 0.1);
+  transform: translateX(10px);
+}
+
+.item h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+  position: relative;
+}
+
+/* Content box on the right */
+.sub-container {
+  position: fixed;
+  right: 5rem;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: auto;
+  min-height: 350px;
+  max-height: 700px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(0, 255, 0, 0.1);
+  font-family: 'Share Tech Mono', monospace;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.1);
+  overflow-y: auto;
+}
+
+.sub-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(0, 255, 0, 0.2),
+    transparent
+  );
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(450px);
+  }
+}
+
+[class^="sub-container-"] {
+  margin: 1rem 0;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px solid rgba(0, 255, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+[class^="sub-container-"]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(0, 255, 0, 0.3)
+  );
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+}
+
+[class^="sub-container-"]:hover {
+  background: rgba(0, 255, 0, 0.1);
+  transform: translateX(5px);
+}
+
+[class^="sub-container-"]:hover::after {
+  transform: translateX(0);
+}
+
+[class^="sub-container-"].active-subheading {
+  background: rgba(0, 255, 0, 0.15);
+  border-color: rgba(0, 255, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+[class^="sub-container-"] h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.p-container {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 1400px) {
+  .menu {
+    left: 2rem;
+  }
+  
+  .sub-container {
+    right: 2rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .menu {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 2rem auto;
+  }
+
+  .sub-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .item {
+    padding: 1rem 1.5rem;
+  }
+
+  .item h2 {
+    font-size: 0.9rem;
+  }
+
+  .sub-container {
+    padding: 1.5rem;
+  }
+
+  [class^="sub-container-"] {
+    padding: 1rem;
+  }
+
+  [class^="sub-container-"] h3 {
+    font-size: 1rem;
+  }
+
+  .p-container {
+    font-size: 0.9rem;
+  }
+}
+
+/* Add these styles to your existing CSS */
+
+.certifications {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(0, 255, 0, 0.05);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 255, 0, 0.1);
+}
+
+.cert-item:hover {
+  background: rgba(0, 255, 0, 0.1);
+  transform: translateX(5px);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.cert-button {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  border-radius: 0.5rem;
+  color: #00ff00;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cert-button:hover {
+  background: rgba(0, 255, 0, 0.2);
+  border-color: rgba(0, 255, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  transform: translateX(5px);
+}
+
+.cert-item p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .cert-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .cert-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Add custom scrollbar */
+.sub-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sub-container::-webkit-scrollbar-track {
+  background: rgba(0, 255, 0, 0.05);
+  border-radius: 5px;
+}
+
+.sub-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 0, 0.2);
+  border-radius: 5px;
+}
+
+.sub-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 0, 0.3);
+}

@@ -7,8 +7,8 @@
   justify-content: center;
   gap: 3rem;
   margin: 1rem auto;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
 }
 
 .nav-link {
@@ -19,32 +19,66 @@
   opacity: 0.7;
   transition: all 0.3s ease;
   min-width: 3.5rem;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    #00ff00,
+    transparent
+  );
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .nav-link img {
   width: 4rem;
   height: 4rem;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
+  transition: all 0.3s ease;
 }
 
 .alt-text {
   font-size: 0.85rem;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   display: none;
   transition: all 0.3s ease;
-  color: white;
+  color: #00ff00;
+  font-family: 'Share Tech Mono', monospace;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .nav-link:hover {
+  opacity: 1;
+  background: rgba(0, 255, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
   opacity: 1;
 }
 
 .nav-link.current {
   opacity: 1;
+  background: rgba(0, 255, 0, 0.15);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 0, 0.2),
+    inset 0 0 15px rgba(0, 255, 0, 0.1);
 }
 
 .nav-link.current .alt-text {
@@ -75,6 +109,8 @@
     transform: translateX(-50%);
     margin: 0;
     gap: 2rem;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 0.75rem 1.5rem;
   }
 
   .nav-link img {

@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Component } from "react";
+import StackMenu from "../components/StackMenu";
 
-const StackPage = () => {
-  return (
-    <div>
-      <h1>Stack Page</h1>
-    </div>
-  )
+export default class StackPage extends Component {
+  render() {
+    return (
+      <>
+        <StackMenu />
+      </>
+    );
+  }
 }
-
-export default StackPage
