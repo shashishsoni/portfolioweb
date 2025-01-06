@@ -1,10 +1,10 @@
 .contact-wrapper {
   position: fixed;
-  left: 52%;
-  top: 59%;
+  left: 50%;
+  top: 58%;
   transform: translate(-50%, -50%);
-  width: 40%;
-  min-width: 500px;
+  width: 35%;
+  min-width: 450px;
   height: auto;
   z-index: 14;
 }
@@ -326,4 +326,29 @@ input:disabled, textarea:disabled {
     0 0 15px rgba(0, 255, 0, 0.1),
     inset 0 0 10px rgba(0, 255, 0, 0.1);
   background: rgba(0, 255, 0, 0.05);
+}
+
+@media screen and (max-width: 1366px) {
+  .contact-wrapper {
+    width: 40%;
+    min-width: 400px;
+    top: 52%;
+  }
+
+  .glitch-text {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  input, textarea {
+    padding: 0.6rem;
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+
+  .form-group {
+    gap: 0.4rem;
+  }
 }

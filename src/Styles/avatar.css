@@ -104,16 +104,16 @@
   .avatar.message-left {
     height: 89vh;
     bottom: -8vh;
-    left: 9%;
+    left: 12%;
     transform: translateX(0);
     z-index: 30;
-    opacity: 0.9;
+    opacity: 0.7;
   }
 
   .avatar.message-right {
     height: 89vh;
     bottom: -8vh;
-    right: 15%;
+    right: 12%;
     transform: translateX(0) scaleX(-1);
     z-index: 30;
     opacity: 0.8;
@@ -146,5 +146,37 @@
     .avatar.message-left,
     .avatar.message-right {
       display: none;
+    }
+  }
+
+  /* Add laptop media query */
+  @media screen and (max-width: 1366px) {
+    .avatar.message-left {
+      height: 85vh;
+      left: 8%;
+      bottom: -5vh;
+    }
+
+    .avatar.message-right {
+      height: 85vh;
+      right: 8%;
+      bottom: -5vh;
+    }
+
+    .avatar.about {
+      height: 85vh;
+      bottom: -5vh;
+    }
+
+    .avatar.skills {
+      height: 1000px;
+      width: 800px;
+      bottom: -40vh;
+    }
+
+    .avatar.stack {
+      height: 1000px;
+      width: 600px;
+      bottom: -35vh;
     }
   }

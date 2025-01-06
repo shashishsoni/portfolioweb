@@ -318,3 +318,33 @@
 .sub-container::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 255, 0, 0.3);
 }
+
+/* Update about menu for laptops */
+@media screen and (max-width: 1366px) {
+  .menu {
+    left: 12rem;
+    width: 17rem;
+  }
+
+  .sub-container {
+    right: 4rem;
+    width: 450px;
+    min-height: 300px;
+  }
+
+  .item {
+    padding: 1rem 1.75rem;
+  }
+
+  .item h2 {
+    font-size: 1rem;
+  }
+
+  [class^="sub-container-"] h3 {
+    font-size: 1.1rem;
+  }
+
+  .p-container {
+    font-size: 0.9rem;
+  }
+}

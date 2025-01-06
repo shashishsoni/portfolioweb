@@ -409,3 +409,32 @@
     min-width: 260px;
   }
 }
+
+@media screen and (max-width: 1366px) {
+  .stack-wrapper {
+    right: 3rem;
+    width: 55%;
+    height: 680px;
+  }
+
+  .project-card {
+    min-width: 400px;
+    width: 400px;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  .project-content {
+    height: calc(100% - 200px);
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+  }
+}
