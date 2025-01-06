@@ -153,25 +153,27 @@
   @media screen and (max-width: 1366px) {
     .avatar.message-left {
       height: 85vh;
-      left: 8%;
+      left: 5%;
       bottom: -5vh;
     }
 
     .avatar.message-right {
-      height: 85vh;
+      height: 900px;
       right: 8%;
-      bottom: -5vh;
+      bottom: -30vh;
     }
 
     .avatar.about {
-      height: 85vh;
-      bottom: -5vh;
+      height: 900px;
+      width: 420px;
+      bottom: -30vh;
     }
 
     .avatar.skills {
-      height: 1000px;
-      width: 800px;
-      bottom: -40vh;
+      height: 900px;
+      width: 700px;
+      bottom: -35vh;
+      left: 4rem;  
     }
 
     .avatar.stack {

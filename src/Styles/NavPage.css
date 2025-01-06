@@ -3,122 +3,122 @@
 @tailwind utilities;
 
 .nav {
+  position: fixed;
   display: flex;
-  justify-content: center;
   gap: 3rem;
-  margin: 1rem auto;
-  padding: 1rem;
-  border-radius: 0.75rem;
+  width: fit-content;
+  padding: 1.2rem 2rem;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 0 0 1rem 1rem;
+  border: 1px solid rgba(0, 255, 0, 0.1);
+  border-top: none;
+  z-index: 10;
+  transition: all 0.3s ease;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
 }
 
 .nav-link {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-  min-width: 3.5rem;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    #00ff00,
-    transparent
-  );
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.nav-link img {
-  width: 4rem;
-  height: 4rem;
-  object-fit: contain;
-  filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
-  transition: all 0.3s ease;
-}
-
-.alt-text {
-  font-size: 0.85rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: none;
-  transition: all 0.3s ease;
+  gap: 1rem;
   color: #00ff00;
+  text-decoration: none;
   font-family: 'Share Tech Mono', monospace;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  transition: all 0.3s ease;
+  opacity: 0.7;
 }
 
 .nav-link:hover {
   opacity: 1;
-  background: rgba(0, 255, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-.nav-link:hover::before {
-  opacity: 1;
+  transform: translateY(2px);
 }
 
 .nav-link.current {
   opacity: 1;
-  background: rgba(0, 255, 0, 0.15);
-  border: 1px solid rgba(0, 255, 0, 0.3);
-  box-shadow: 
-    0 0 20px rgba(0, 255, 0, 0.2),
-    inset 0 0 15px rgba(0, 255, 0, 0.1);
 }
 
-.nav-link.current .alt-text {
-  display: block;
-  animation: fadeIn 0.3s ease forwards;
+.nav-link img {
+  width: 2.2rem;
+  height: 2.2rem;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(0, 255, 0, 0.5));
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.nav-link:hover img {
+  transform: scale(1.1);
 }
 
 .page-title {
-  display: none;
+  font-size: 1.3rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #00ff00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
 }
 
-@media (max-width: 1100px) {
+.alt-text {
+  display: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Add laptop media query */
+@media screen and (max-width: 1366px) {
   .nav {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    gap: 2rem;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 1.8rem;
+    gap: 2.5rem;
   }
 
   .nav-link img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 1100px) {
+  .nav {
+    padding: 0.8rem 1.5rem;
+    gap: 2rem;
+    background: rgba(0, 0, 0, 0.95);
+  }
+
+  .nav-link img {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .page-title {
+    display: none;
   }
 
   .alt-text {
-    font-size: 0.65rem;
+    display: block;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    padding: 0.7rem 1.2rem;
+    gap: 1.5rem;
+  }
+
+  .nav-link img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .alt-text {
+    font-size: 0.7rem;
   }
 }

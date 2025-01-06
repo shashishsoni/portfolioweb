@@ -330,9 +330,14 @@ input:disabled, textarea:disabled {
 
 @media screen and (max-width: 1366px) {
   .contact-wrapper {
-    width: 40%;
+    width: 35%;
     min-width: 400px;
-    top: 52%;
+    top: 20%;
+    height: 100px;
+  }
+
+  .contact-form {
+    gap: 0.5rem;
   }
 
   .glitch-text {
@@ -341,7 +346,7 @@ input:disabled, textarea:disabled {
   }
 
   input, textarea {
-    padding: 0.6rem;
+    padding: 0.1rem;
   }
 
   textarea {
@@ -349,6 +354,6 @@ input:disabled, textarea:disabled {
   }
 
   .form-group {
-    gap: 0.4rem;
+    gap: 0.1rem;
   }
 }

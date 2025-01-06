@@ -412,9 +412,10 @@
 
 @media screen and (max-width: 1366px) {
   .stack-wrapper {
-    right: 3rem;
-    width: 55%;
+    right: 2rem;
+    width: 58%;
     height: 680px;
+    top: 55%;
   }
 
   .project-card {

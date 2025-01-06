@@ -254,8 +254,13 @@
     height: 650px;
   }
 
+  .skill-level {
+    gap: 2px;
+    margin-left: -35px;
+  }
+
   .skills-tabs {
-    right: 12rem;
+    right: 11.5rem;
   }
 
   .tab-button {

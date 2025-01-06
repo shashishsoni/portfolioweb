@@ -1,5 +1,5 @@
 #playerStats {
-    width: 30rem;
+    width: 25rem;
     height: auto;
     position: fixed;
     display: flex;
@@ -93,38 +93,6 @@ h2 {
     }
     100% {
         background-position: 200% 0;
-    }
-}
-
-@media (max-width: 1100px) {
-    #playerStats {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        max-width: 16rem;
-        top: 1.5rem;
-        padding: 1rem;
-        gap: 0.25rem;
-    }
-    
-    h1 {
-        font-size: 1.5rem;
-    }
-    
-    h2 {
-        font-size: 1rem;
-    }
-    
-    #playerStats__lines {
-        margin-top: 0.25rem;
-    }
-    
-    #playerStats__lines__thick {
-        height: 0.4rem;
-    }
-    
-    .playerStats__daysLeft {
-        font-size: 0.75rem;
     }
 }
 
@@ -247,40 +215,115 @@ h2 {
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
 }
 
-@media (max-width: 1100px) {
-  .player {
-    height: 4rem;
+@media screen and (max-width: 1366px) {
+
+  #playerStats {
+    width: 24rem;
+    padding: 1rem;
+    top: 1rem;
+    left: 1rem;
+    gap: 0.3rem;
   }
 
-  .player-button {
-    width: 2.5rem;
-    height: 2.5rem;
+  h1 {
+    font-size: 1.6rem;
   }
 
-  .time-display {
+  h2 {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .playerStats__daysLeft {
     font-size: 0.8rem;
+    top: calc(100% + 0.4rem);
   }
 
-  .volume-slider {
-    width: 80px;
-  }
+    .player {
+        height: 4.5rem;
+    }
+
+    .player-button {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+
+    .progress-bar {
+        height: 3px;
+    }
+
+    .time-display {
+        font-size: 0.80rem;
+    }
+
+    .volume-slider {
+        width: 90px;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 1100px) {
+    #playerStats {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+        max-width: 15rem;
+        top: 1rem;
+        padding: 0.8rem;
+        gap: 0.2rem;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    h2 {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+    
+    #playerStats__lines {
+        margin-top: 0.2rem;
+    }
+    
+    #playerStats__lines__thick {
+        height: 0.35rem;
+    }
+    
+    .playerStats__daysLeft {
+        font-size: 0.7rem;
+    }
+
+    .player {
+        height: 4rem;
+    }
+
+    .player-button {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 }
 
 @media (max-width: 700px) {
-  .player {
-    height: 3.5rem;
-  }
+    #playerStats {
+        width: 85%;
+        padding: 0.7rem;
+    }
 
-  .player-button {
-    width: 2rem;
-    height: 2rem;
-  }
+    .player {
+        height: 3.5rem;
+    }
 
-  .time-display {
-    font-size: 0.7rem;
-  }
+    .player-button {
+        width: 2rem;
+        height: 2rem;
+    }
 
-  .volume-slider {
-    width: 60px;
-  }
+    .volume-slider {
+        width: 60px;
+    }
 }

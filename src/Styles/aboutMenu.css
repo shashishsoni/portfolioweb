@@ -322,14 +322,14 @@
 /* Update about menu for laptops */
 @media screen and (max-width: 1366px) {
   .menu {
-    left: 12rem;
+    left: 10rem;
     width: 17rem;
   }
 
   .sub-container {
     right: 4rem;
-    width: 450px;
-    min-height: 300px;
+    width: 400px;
+    height: 555px;
   }
 
   .item {
@@ -346,5 +346,22 @@
 
   .p-container {
     font-size: 0.9rem;
+  }
+
+  .cert-item {
+    padding: 0.5rem;
+  }
+
+  .cert-button {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .cert-item p {
+    font-size: 0.8rem;
+  }
+
+  .cert-item {
+    padding: 0.5rem;
   }
 }
