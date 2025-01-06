@@ -24,3 +24,14 @@ button:hover,
 .sub-container-3:not(.active-subheading):hover {
   background-image: linear-gradient(90deg, #ffffff00, #ffffff42 50%, #ffffff00);
 }
+
+/* Update global scrollbar styles */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox and other browsers */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

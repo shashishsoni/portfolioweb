@@ -21,6 +21,7 @@
     bottom: -8vh;
     left: 48%;
     transform: translateX(-50%);
+    aspect-ratio: auto 1 / 1; 
   }
   
   .avatar.skills {
@@ -30,6 +31,7 @@
     left: 9rem;
     transform: translateX(0%) scaleX(-1);
     transition: all 0.3s ease-in-out;
+    aspect-ratio: auto 1 / 1; 
   }
   
   .avatar.stack {
@@ -40,6 +42,7 @@
     transform: translateX(0%);
     z-index: 90;
     pointer-events: none;
+    aspect-ratio: auto 1 / 1; 
   }
   
   .avatar.message {
@@ -180,5 +183,43 @@
       height: 1000px;
       width: 600px;
       bottom: -35vh;
+    }
+  }
+
+  @media screen and (max-width: 1556px) {
+    .avatar.about {
+      height: 100vh;
+      max-height: 700px;
+      width: 400px;
+      bottom: -12vh;
+    }
+
+    .avatar.skills {
+      height: 850px;
+      width: 650px;
+      bottom: -30vh;
+      left: 12rem;
+      transform: translateX(0%);
+    }
+
+    .avatar.stack {
+      height: 900px;
+      width: 550px;
+      bottom: -35vh;
+      left: 15rem;
+    }
+
+    .avatar.message-left {
+      height: 85vh;
+      max-height: 650px;
+      left: 8%;
+      bottom: -5vh;
+    }
+
+    .avatar.message-right {
+      height: 905px;
+      max-height: 820px;
+      right: 12%;
+      bottom: -30vh;
     }
   }

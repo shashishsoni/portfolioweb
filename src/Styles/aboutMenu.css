@@ -91,6 +91,9 @@
   font-family: 'Share Tech Mono', monospace;
   box-shadow: 0 0 30px rgba(0, 255, 0, 0.1);
   overflow-y: auto;
+  scrollbar-gutter: stable;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .sub-container::before {
@@ -300,19 +303,20 @@
   }
 }
 
-/* Add custom scrollbar */
+/* Custom scrollbar for about menu */
 .sub-container::-webkit-scrollbar {
-  width: 5px;
+  display: none;
 }
 
 .sub-container::-webkit-scrollbar-track {
   background: rgba(0, 255, 0, 0.05);
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .sub-container::-webkit-scrollbar-thumb {
   background: rgba(0, 255, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 255, 0, 0.1);
 }
 
 .sub-container::-webkit-scrollbar-thumb:hover {
@@ -320,48 +324,53 @@
 }
 
 /* Update about menu for laptops */
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1556px) {
   .menu {
-    left: 10rem;
-    width: 17rem;
+    left: 18rem;
+    width: 15rem;
   }
 
-  .sub-container {
-    right: 4rem;
-    width: 400px;
-    height: 555px;
-  }
-
-  .item {
-    padding: 1rem 1.75rem;
-  }
-
-  .item h2 {
-    font-size: 1rem;
-  }
-
-  [class^="sub-container-"] h3 {
-    font-size: 1.1rem;
-  }
-
-  .p-container {
-    font-size: 0.9rem;
+  .certifications {
+    gap: 1rem;
   }
 
   .cert-item {
-    padding: 0.5rem;
+    padding: 0.8rem;
   }
 
   .cert-button {
-    padding: 0.2rem 0.5rem;
+    padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
-
-  .cert-item p {
-    font-size: 0.8rem;
+  
+  .sub-container {
+    right: 8rem;
+    width: 400px;
+    height: 500px;
   }
 
-  .cert-item {
-    padding: 0.5rem;
+  .item {
+    padding: 1.1rem 1.8rem;
   }
+
+  .item h2 {
+    font-size: 1.05rem;
+  }
+
+  [class^="sub-container-"] h3 {
+    font-size: 1.15rem;
+  }
+
+  .p-container {
+    font-size: 0.95rem;
+  }
+}
+
+.sub-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sub-container::-webkit-scrollbar {
+  display: none;
 }

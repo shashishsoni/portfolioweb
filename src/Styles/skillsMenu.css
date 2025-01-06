@@ -88,6 +88,12 @@
 .skills-content {
   position: relative;
   min-height: 400px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.skills-content::-webkit-scrollbar {
+  display: none;
 }
 
 .skills-section {
@@ -206,6 +212,11 @@
     width: 90%;
     max-width: 600px;
     margin: 2rem auto;
+    height: 80vh;
+  }
+
+  .skills-content {
+    height: calc(100% - 8rem);
   }
 
   .skills-wrapper {
@@ -230,10 +241,16 @@
 @media (max-width: 700px) {
   .skills-menu {
     padding: 1.5rem;
+    height: 75vh;
+  }
+
+  .skills-content {
+    height: calc(100% - 7rem);
   }
 
   .skill-title {
     font-size: 1.25rem;
+    padding: 0.75rem 0;
   }
 
   .skill-name {
@@ -247,11 +264,31 @@
   }
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1556px) {
   .skills-menu {
-    right: 20rem;
-    width: 450px;
-    height: 650px;
+    right: 22rem;
+    width: 480px;
+    height: 600px;
+    overflow: hidden;
+  }
+
+  .skills-content {
+    height: calc(100%);
+    overflow-y: auto;
+  }
+
+  .skills-tabs {
+    right: 13rem;
+    position: fixed;
+  }
+
+  .skill-item {
+    padding: 1rem 1rem 1rem 0.75rem;
+  }
+
+  .tab-button {
+    padding: 0.9rem 1.6rem;
+    font-size: 0.95rem;
   }
 
   .skill-level {
@@ -259,21 +296,21 @@
     margin-left: -35px;
   }
 
-  .skills-tabs {
-    right: 11.5rem;
-  }
-
-  .tab-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
-  }
-
   .skill-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.8rem;
+    position: none;
+    top: 0;
+    padding: 1rem 0;
+    z-index: 1;
   }
 
   .skill-name {
-    font-size: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .skills-section {
+    padding-bottom: 1rem;
   }
 }
+

@@ -22,22 +22,14 @@
     0 0 50px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
+  overflow-y: auto;
+  max-height: 90vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.contact-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 255, 0, 0.5),
-    transparent
-  );
-  animation: scan 3s linear infinite;
+.contact-container::-webkit-scrollbar {
+  display: none;
 }
 
 .terminal-header {
@@ -328,32 +320,27 @@ input:disabled, textarea:disabled {
   background: rgba(0, 255, 0, 0.05);
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1556px) {
   .contact-wrapper {
-    width: 35%;
-    min-width: 400px;
-    top: 20%;
-    height: 100px;
+    width: 33%;
+    min-width: 420px;
+    top: 55%;
   }
 
   .contact-form {
-    gap: 0.5rem;
+    gap: 0.8rem;
   }
 
   .glitch-text {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.8rem;
   }
 
   input, textarea {
-    padding: 0.1rem;
+    padding: 0.9rem;
   }
 
   textarea {
-    min-height: 100px;
-  }
-
-  .form-group {
-    gap: 0.1rem;
+    min-height: 110px;
   }
 }
